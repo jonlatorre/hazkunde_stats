@@ -1,0 +1,313 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<title>
+Estadísticas - PLAN DE FORMACIÓN DEL PROGRAMA SERVICIO RESPONSABLE.</title>
+<style type="text/css" media="screen, projection">
+/*<![CDATA[*/
+@import "http://formacion.hazkunde.com/main/css/hazkunde/default.css";
+/*]]>*/
+</style>
+<style type="text/css" media="print">
+/*<![CDATA[*/
+@import "http://formacion.hazkunde.com/main/css/hazkunde/print.css";
+/*]]>*/
+</style>
+
+<link rel="top" href="http://formacion.hazkunde.com/index.php" title="" />
+<link rel="courses" href="http://formacion.hazkunde.com/main/auth/courses.php" title="otros cursos" />
+<link rel="profil" href="http://formacion.hazkunde.com/main/auth/profile.php" title="Mi perfil" />
+<link href="http://www.dokeos.com/documentation.php" rel="Help" />
+<link href="http://www.dokeos.com/team.php" rel="Author" />
+<link href="http://www.dokeos.com" rel="Copyright" />
+<link rel="shortcut icon" href="http://formacion.hazkunde.com/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="http://formacion.hazkunde.com/apple-touch-icon.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
+<meta name="Generator" content="Dokeos">
+
+<script type="text/javascript">
+//<![CDATA[
+// This is a patch for the "__flash__removeCallback" bug, see FS#4378.
+if ( ( navigator.userAgent.toLowerCase().indexOf('msie') != -1 ) && ( navigator.userAgent.toLowerCase().indexOf( 'opera' ) == -1 ) )
+{
+	window.attachEvent( 'onunload', function()
+		{
+			window['__flash__removeCallback'] = function ( instance, name )
+			{ 
+				try
+				{ 
+					if ( instance )
+					{ 
+						instance[name] = null ; 
+					} 
+				}
+				catch ( flashEx )
+				{
+
+				} 
+			} ;
+		}
+	) ;
+}
+//]]>
+</script>
+<script type="text/javascript" src="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery-1.4.2.min.js" language="javascript"></script><script type="text/javascript" src="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery-ui/js/jquery-ui-1.8.1.custom.min.js"></script><link type="text/css" href="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery-ui/css/ui-lightness/jquery-ui-1.8.1.custom.css" rel="stylesheet" /><script type="text/javascript" src="http://formacion.hazkunde.com/main/inc/lib/javascript/dokeos.js.php" language="javascript"></script><script type="text/javascript">
+        (function ($) {
+           try {
+                var a = $.ui.mouse.prototype._mouseMove; 
+                $.ui.mouse.prototype._mouseMove = function (b) { 
+                b.button = 1; a.apply(this, [b]); 
+                } 
+            }catch(e) {}
+        } (jQuery));
+    </script><script type="text/javascript" src="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery.mousewheel.min.js"></script><script type="text/javascript" src="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery.slidingtabs.pack.js"></script>    
+        <script type="text/javascript">  
+            $(document).ready(function() {  				
+                    // Horizontal Sliding Tabs Demo
+                    $("div#dokeostabs").slideTabs({
+                            // Options  			
+                            orientation: "horizontal",
+                            slideWidth:916, // Width of the #tabs_container <div> element			
+                            contentAnim: "slideLeft",
+                            contentEasing: "easeInOutExpo",
+                            tabsAnimTime: 300,
+                            contentAnimTime: 600
+                    });		  		  		  	
+            });		
+    </script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a.logoutClick').live('click', function(event) {
+                event.preventDefault();
+		LogOut.clicklogout($(this));
+	});
+	
+});
+
+var LogOut = function() {
+	return {
+              clicklogout : function( clicked ) 
+              {                      
+                    $('#logoutMsgBody').dialog({modal: true, title: 'Logout', height: '230', width: '350px', resizable: false, 
+                            buttons: { 
+                                    'No': function() {
+                                        $(this).dialog('close');
+                                        }, 
+                                    'Yes': function() {
+                                        window.location =" http://formacion.hazkunde.com/index.php?logout=logout&uid=89";
+                                        }
+                                     }
+                   });		
+		}
+	}
+}();
+</script>    
+    
+<script type="text/javascript" language="javascript">
+	function h_search(){
+		var input = $('#input').val();
+		var loader = $('#h_loader');
+		$('#main').html("");
+		loader.show();
+		$('#main').html('<div id="content"><div id="h_loader"><br/><br/>' + 'Buscando&nbsp;'+'<strong>'+input+'</strong>' +'...</div></div>');
+		// ajax request to show results
+		$.ajax({
+			  url: 'http://formacion.hazkunde.com/main/search/get_results.ajax.php',
+			  cache: false,
+			  data: 'input='+input,
+			  success: function(html){
+			    h_showResults();
+			    $('#main').html("<div id='content'><div id='result'>"+html+"</div></div>");
+			  }
+			});
+		return false;		
+	}
+	
+	function h_showResults(){
+		var loader = $('#h_loader');
+		var result = $('#main'); 
+		loader.hide();
+		result.fadeIn();
+	}
+
+	function h_hideResults(){
+		var result = $('#main');
+		var form = $('#search_form'); 
+		result.hide();
+		form.fadeIn();
+		$('#input').focus();
+	}
+	
+	// intercept "enter" to submit form
+	$(document).ready(function(){
+		$('#input').focus();
+               if (jQuery.browser.msie && jQuery.browser.version <= 7) {
+                  $("#dokeostabs li span").css("margin-top","11px");
+               }
+	});	
+</script>  
+<script type="text/javascript">
+    $(function(){
+       $(window).scroll(function(){
+         $("#footer").css({"left":"0","bottom":"0"});
+       });
+    });
+</script>
+</head>
+<body dir="ltr" >
+
+<div id="wrapper">
+<div id="header">
+	<div id="header1"
+	
+>		
+		<div class="headerinner">
+			            <div id="top_corner"><a style="display:block;height:50px;width:450px;"  href="http://formacion.hazkunde.com/index.php"></a></div>
+						<div id="institution">
+							<a href="http://formacion.hazkunde.com/index.php" target="_top">PLAN DE FORMACI&Oacute;N DEL PROGRAMA <br/>SERVICIO RESPONSABLE</a>
+						</div>
+                        
+	        </div>
+
+	</div>
+
+
+
+	<div id="header2">
+		<div class="headerinner1">
+                    
+<div id="dokeostabs">                                                                                      				                               
+<a href="#prev" id="prev"></a>                 
+<div id="tabs_container">              
+<ul id="tabs" ><li  class="tab_mycourses"><a href='http://formacion.hazkunde.com/user_portal.php' target='_top'>Mis cursos</a></li><li  class="tab_search"></li>	<li class="logout"><a class="logoutClick"  href="" >Salir</a></li>
+</ul>
+</div> <!-- /#tabs_container -->
+<a href="#next" id="next"></a>                                                                                             
+</div> <!-- /#dokeostabs -->
+<div style="clear: both;" class="clear"> </div>                </div>
+                <div id="clear_div"> </div>
+	</div>
+		        
+	</div>
+
+
+<div style="display:none;" id="logoutMsgBody"><center><img src="http://formacion.hazkunde.com/main/img/logout-tab.png" style="vertical-align:text-bottom;"><br/>¿Estás seguro de cerrar tu sesion?</center></div>
+</div> <!-- end of the whole #header section -->
+<div class="clear">&nbsp;</div>
+<div id="main"> <!-- start of #main wrapper for #content and #menu divs -->
+<!--   Begin Of script Output   -->
+<div id="content"><h3 class="orange">Estadísticas</h3>
+<table>
+<thead>
+<tr>
+<td><h4>Cursos</h4></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numero total de Cursos</td> <td>33</td>
+</tr>
+<tr>
+<td>Numero de Cursos finalizados</td> <td>30</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<td><h4>Cursos por CCAA</h4></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Navarra</td> <td>15</td>
+</tr>
+<tr>
+<td>Cantabria</td> <td>15</td>
+</tr>
+<tr>
+<td>Pais Vasco</td> <td>3</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<td><h4>Alumnos</h4></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numero total de Alumnos</td> <td>330</td>
+</tr>
+<tr>
+<td>Numero de alumnos que finalizÃ¡n la formaciÃ³n</td> <td>300</td>
+</tr>
+<tr>
+<td>Numero de alumnos por perfil laboral</td>
+</tr>
+<tr>
+<td>Camareros</td><td>200</td>
+</tr>
+<tr>
+<td>Camareros</td><td>200</td>
+</tr>
+<tr>
+<td>Camareros</td><td>200</td>
+</tr>
+</tbody>
+</table>
+
+<br/><br/></div> <div class="clear">&nbsp;</div> <!-- 'clearing' div to make sure that footer stays below the main and right column sections -->
+</div> <!-- end of #main" started at the end of banner.inc.php -->
+
+<div class="push"></div>
+</div> <!-- end of #wrapper section -->
+
+<div id="footer"> <!-- start of #footer section -->
+	<div id="footerinner">
+		<div class="copyright">
+		Plataforma <a href="http://www.dokeos.com" target="_blank">Dokeos 2.2</a>		</div>
+
+&nbsp;<span class="usersonline"><span class="usersonlinetitle">Usuarios en línea : </span><span class="usersonlinecontent">3</span><span class="usersonlineicon"></span></span><script type="text/javascript" src="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery-ui/js/jquery-ui-1.8.1.custom.min.js"></script><link type="text/css" href="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery-ui/css/ui-lightness/jquery-ui-1.8.1.custom.css" rel="stylesheet" /><script type="text/javascript">
+              var minChatHeartbeat = 2*1000;
+        </script><script src="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery_chat/chat.js" type="text/javascript" language="javascript"></script><link rel="stylesheet" href="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery_chat/screen.css" type="text/css" media="projection, screen"><!--[if lte IE 7]><link rel="stylesheet" href="http://formacion.hazkunde.com/main/inc/lib/javascript/jquery_chat/screen_ie.css" type="text/css" media="projection, screen"><![endif]--><script type="text/javascript">
+            $(document).ready(function() {
+                var box = null;
+                $(".chat_friend").live("click", function() {
+                    try {
+                    var data_id = $(this).attr("id");
+                    var data_info = data_id.split("chat_");
+                    chatWith(data_info[1]);
+                    $("#chat-dialog").dialog("close");
+                    } catch (e) {}
+                });
+                $("#footerinner").before("<div id='chat_container'>&nbsp;</div>");
+                createControl();
+                $(".usersonlineicon").css("cursor","pointer").click(function(){
+                    $("#chat-dialog").dialog({modal: true, title: "Usuarios en línea",width: "600px"});
+                });
+             });
+        </script><div id="chat-dialog" style="display:none;"><style>
+					.grid_container { width:100%;}
+					.grid_item { height: 135px; width:98px;  border:1px dotted #ccc; float:left; padding:5px; margin:8px;}
+					.grid_element_0 { width:100px; float:left; text-align:center; margin-bottom:5px;}
+					.grid_element_1 { width:100px; float:left; text-align:center;margin-bottom:5px;}
+					.grid_element_2 { width:150px; float:left;}
+					
+					.grid_selectbox { width:50%; float:left;}
+					.grid_title 	{ width:30%; float:left;}
+					.grid_nav 		{ float:right;}
+						
+			</style><div class="sub-header"><div class="grid_selectbox"></div><div class="grid_title">1 - 3 / 3</div><div class="grid_nav">  1 / 1  </div></div><div class="clear"></div><div class="grid_container"><div class="grid_item"><div class="grid_element_0"><a href="http://formacion.hazkunde.com/main/social/profile.php?u=1"><img title = "Hazkunde Prevención Hazkunde" class="social-home-users-online" alt="Hazkunde Prevención Hazkunde" src="http://formacion.hazkunde.com/main/css/hazkunde/images/unknown.png" height="60px"></a></div><div class="grid_element_1"><div style="cursor:pointer;" id="chat_admin" class="chat_friend">Hazkunde Preven... Hazkunde<br/><img src="http://formacion.hazkunde.com/main/img/pixel.gif" alt="Chat"  title="Chat" class="toolchatsocialtalk"   /></div></div></div><div class="grid_item"><div class="grid_element_0"><a href="http://formacion.hazkunde.com/main/social/profile.php?u=89"><img title = "prueba20130520 prueba20130520" class="social-home-users-online" alt="prueba20130520 prueba20130520" src="http://formacion.hazkunde.com/main/css/hazkunde/images/unknown.png" height="60px"></a></div><div class="grid_element_1"><div id="chat_prueba20130520" >prueba20130520 prueba20130520</div></div></div><div class="grid_item"><div class="grid_element_0"><a href="http://formacion.hazkunde.com/main/social/profile.php?u=36"><img title = "ZURINE SANCHO RIVERO" class="social-home-users-online" alt="ZURINE SANCHO RIVERO" src="http://formacion.hazkunde.com/main/css/hazkunde/images/unknown.png" height="60px"></a></div><div class="grid_element_1"><div style="cursor:pointer;" id="chat_ZURINE_SANCHO_RIVERO" class="chat_friend">ZURINE SANCHO RIVERO<br/><img src="http://formacion.hazkunde.com/main/img/pixel.gif" alt="Chat"  title="Chat" class="toolchatsocialtalk"   /></div></div></div></div><div class="clear"></div></div><input type="hidden" id="pathChat" value="http://formacion.hazkunde.com/main/social/chat.php?" />&nbsp;
+<br />
+		<div id="bottom_corner"></div>
+</div>        
+</div> <!-- end of #footer -->
+</body>
+</html>
+
