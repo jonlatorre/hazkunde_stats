@@ -5,6 +5,7 @@ urlpatterns = patterns('',
     (r'^preideas/$', PreIdeasView.as_view()),
     (r'^postideas/$', PostIdeasView.as_view()),
     (r'^prevspostideas/$', prevspostideas),
+    (r'^prevspostconocimientos/$', prevspostconocimientos),
     (r'^prevspostideasnavarra/$', prevspostideasnavarra),
     (r'^prevspostideascantabria/$', prevspostideascantabria),
 )
