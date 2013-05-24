@@ -8,4 +8,6 @@ urlpatterns = patterns('',
     (r'^prevspostconocimientos/$', prevspostconocimientos),
     (r'^prevspostideasnavarra/$', prevspostideasnavarra),
     (r'^prevspostideascantabria/$', prevspostideascantabria),
+    (r'^prevspostconocimientosnavarra/$', prevspostconocimientosnavarra),
+    (r'^prevspostconocimientoscantabria/$', prevspostconocimientoscantabria),
 )
