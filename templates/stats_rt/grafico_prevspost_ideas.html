@@ -1,0 +1,29 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Pregunta', 'Pre', 'Post'],
+	  
+          ['1',  {{pre.0.numero}},      {{post.0.numero}}],
+          ['2',  {{pre.1.numero}},      {{post.1.numero}}],
+          ['3',  {{pre.2.numero}},      {{post.2.numero}}],
+          ['4',  {{pre.3.numero}},      {{post.3.numero}}],
+          ['5',  {{pre.4.numero}},      {{post.4.numero}}],
+          ['6',  {{pre.5.numero}},      {{post.5.numero}}],
+          ['7',  {{pre.6.numero}},      {{post.6.numero}}],
+          ['8',  {{pre.7.numero}},      {{post.7.numero}}],
+          ['9',  {{pre.8.numero}},      {{post.8.numero}}]
+        ]);
+
+        var options = {
+          title: '{% block title %}Resultados del PRE vs POST de ideas{% endblock %}',
+          hAxis: {title: '{% block eje_y %}{% endblock %}', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('{% block div_name %}{% endblock%}'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="{% block div_name %}{% endblock%}" style="width: 900px; height: 500px;"></div>
