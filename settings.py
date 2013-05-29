@@ -213,6 +213,9 @@ DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
 }
 
+#Hacemos que si una variable no esta en el tempplate se vea un 0
+TEMPLATE_STRING_IF_INVALID='0'
+
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
 try:

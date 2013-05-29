@@ -1,31 +1,6 @@
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Pregunta', 'Pre', 'Post'],
-	  
-          ['1',  {{pre.0.numero}},      {{post.0.numero}}],
-          ['2',  {{pre.1.numero}},      {{post.1.numero}}],
-          ['3',  {{pre.2.numero}},      {{post.2.numero}}],
-          ['4',  {{pre.3.numero}},      {{post.3.numero}}],
-          ['5',  {{pre.4.numero}},      {{post.4.numero}}],
-          ['6',  {{pre.5.numero}},      {{post.5.numero}}],
-          ['7',  {{pre.6.numero}},      {{post.6.numero}}],
-          ['8',  {{pre.7.numero}},      {{post.7.numero}}],
-          ['9',  {{pre.8.numero}},      {{post.8.numero}}]
-        ]);
+{% extends "stats_rt/grafico_prevspost_ideas.html" %}
 
-        var options = {
-          title: 'Resultados del PRE vs POST de ideas de NAVARRA',
-          hAxis: {title: 'Pregunta', titleTextStyle: {color: 'red'}}
-        };
+{% block title %}NAVARRA: Resultados del PRE vs POST de ideas{% endblock %}
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_prevspost_ideas_navarra'));
-        chart.draw(data, options);
-      }
-    </script>
 
-    <div id="chart_div_prevspost_ideas_navarra" style="width: 450px; height: 300px;"></div>
 

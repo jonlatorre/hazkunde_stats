@@ -12,9 +12,7 @@
           ['4',  {{pre.3.numero}},      {{post.3.numero}}],
           ['5',  {{pre.4.numero}},      {{post.4.numero}}],
           ['6',  {{pre.5.numero}},      {{post.5.numero}}],
-          ['7',  {{pre.6.numero}},      {{post.6.numero}}],
-          ['8',  {{pre.7.numero}},      {{post.7.numero}}],
-          ['9',  {{pre.8.numero}},      {{post.8.numero}}]
+          ['7',  {{pre.6.numero}},      {{post.6.numero}}]
         ]);
 
         var options = {
@@ -22,7 +20,7 @@
           hAxis: {title: '{{ texto_eje_y }}', titleTextStyle: {color: 'red'}}
         };
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('{{ div_name }}'));
+        var chart = new google.visualization.LineChart(document.getElementById('{{ div_name }}'));
         chart.draw(data, options);
       }
     </script>
